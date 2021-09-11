@@ -1,18 +1,19 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
-export const IcomingMessage = ({msjRecibido}) => {
-    if(msjRecibido !== null){
-
-        
+export const IcomingMessage = ({msj}) => {
+    
+    if(msj !== null){
         return (
     
             <View style={styles.container}>
-                <Text>{msjRecibido}</Text>          
+
+                <Text>{msj}</Text>          
+            
             </View>
         )
-        }
-      return <View></View>
+    }
+    return <View></View>
 }
 
 const styles = StyleSheet.create({

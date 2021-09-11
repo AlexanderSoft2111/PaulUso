@@ -4,16 +4,26 @@ import { Avatar } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export const SectionEstado = ({estado, nombre}) => {
+
   const fecha = new Date();
+  
   const hoy = fecha.toLocaleDateString();
-    return (
+    
+  return (
         <View style = {styles.sectionEstado}>
-        <Text style={styles.iconCircle}>
-        <Icon name="circle" style={[styles.iconCircle, (estado) ? styles.activo : styles.inactivo]}/>
-        </Text>
-        <Avatar.Image style={styles.avatar} size={24} source={require('../assets/images/avatar.jpg')}/>
-        <Text style={styles.txtNombre}>{nombre}</Text>
-        <Text style={styles.txtFecha}>{hoy}</Text>
+
+          <Text style={styles.iconCircle}>
+          
+            <Icon name="circle" style={[styles.iconCircle, (estado) ? styles.activo : styles.inactivo]}/>
+          
+          </Text>
+          
+          <Avatar.Image style={styles.avatar} size={24} source={require('../assets/images/avatar.jpg')}/>
+          
+          <Text style={styles.txtNombre}>{nombre}</Text>
+          
+          <Text style={styles.txtFecha}>{hoy}</Text>
+      
       </View>
     )
 }

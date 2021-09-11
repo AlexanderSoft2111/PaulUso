@@ -1,0 +1,122 @@
+/*Para actualizar un objeto de una coleccion
+
+    const actualizarElemento = () => {
+         Realm.write(() => {
+             item = productos.filtered("description == 'Camisa4'");
+                console.log('este es el item apuntado: ',item);
+             const itemEditar = item[0];
+            // console.log('este es el item a editar: ',itemEditar)
+            //  itemEditar.description = "Pantalon";
+                   itemEditar.mensajesEnviados.push(
+                       {
+                        msjEnviado: "prueba6",
+                        fecha: hoy
+                       }
+                       
+                    )            
+          });  
+    }
+*/
+
+/*     Para eliminar todos un objeto 
+    const eliminarElemento = () => {
+
+        Realm.write(() => {
+            //elimina todos los objetos del realm
+             Realm.deleteAll();
+            // Elimina una posicion de un objeto.
+           //  Realm.delete(productos[3])
+           console.log("elimine el realm")
+          });  
+    } */
+
+Ejemplo de como escuchar los cambios de una colección
+
+/*  let realm;
+ 
+ const conexion = async () =>{
+    realm = await getRealm();
+  } */
+
+    /* useEffect( () => {
+       conexion();
+    }, [])
+
+    
+    
+    
+    useEffect( () => {
+        setTimeout(() => {
+            watch();
+        }, 1000);
+     }, [])
+    //Establecemos el useState para almacenar los productos que consultemos a realm y los inicializamos como un array vacio
+    const [dogs, setdogs] = useState([]);
+    
+    const cargar =  () => {
+        
+        //  Con la sentencia objects consultamos todo los datos de la coleccion Productos12
+        const item = realm.objects("Dog");
+        setdogs(item);
+}
+
+const crear = () => {
+    realm.write(() => {
+    realm.create('Dog', {_id: new ObjectId(),name: 'Alex', breed: 'hola', realm_id: '1234'});
+  }); 
+}
+
+const watch = () => {
+
+if(realm !== undefined){
+
+    // You can define a listener for any collection of Realm objects
+    const dogslive = realm.objects("Dog");
+    // Define a listener callback function for changes to any Dog
+    function onDogsChange(dogslive, changes) {
+      // Handle deleted Dog objects
+      //console.log('me llamaron al cambio');
+      changes.deletions.forEach((index) => {
+        // You cannot directly access deleted objects,
+        // but you can update a UI list, etc. based on the index.
+        console.log(`Looks like Dog #${index} has left the realm.`);
+        cargar();
+      });
+      // Handle newly added Dog objects
+      changes.insertions.forEach((index) => {
+        const insertedDog = dogslive[index];
+        console.log(`Welcome our new friend, ${insertedDog.name}!`);
+        cargar();
+      });
+      // Handle Dog objects that were modified
+      changes.modifications.forEach((index) => {
+        const modifiedDog = dogslive[index];
+        console.log(`Hey ${modifiedDog.name}, you look different!`);
+        cargar();
+    });
+    
+    
+    
+    
+    }
+    // Add the listener callback to the collection of dogs
+    dogslive.addListener(onDogsChange);
+    // Remember to remove the listener when you're done!
+}
+
+
+
+}
+
+const eliminarElemento = () => {
+    realm.write(() => {
+        
+        realm.deleteAll();
+      });     
+
+        }
+    
+const cerrar = () => {
+          realm.close(); 
+          console.log("Se cerro el realm"); 
+} */

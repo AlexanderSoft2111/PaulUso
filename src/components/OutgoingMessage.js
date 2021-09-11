@@ -1,31 +1,28 @@
 import React from 'react'
-import {  FlatList, StyleSheet, Text, View } from 'react-native'
-
-
-
+import { StyleSheet, Text, View } from 'react-native'
 
 export const OutgoingMessage = ({msj}) => {
 
-   // console.log("ESTE ES UN MENJASE: ",msjEnviado)
-
     if(msj !== null){
 
-        
-    return (
+        return (
 
-        <View style={styles.container}>
-            <Text>{msj}</Text>          
-               
-        </View>
-    )
+            <View style={styles.container}>
+                
+                <Text style={styles.Text}>{msj}</Text>          
+                
+            </View>
+        )
     }
-  return <View></View>
+  
+    return <View></View>
 
 }
 
 const styles = StyleSheet.create({
+
 container:{
-    backgroundColor: 'white',
+    backgroundColor: '#68b961',
     width: 270,
     minHeight: 50,
     borderColor: 'grey',
@@ -34,5 +31,10 @@ container:{
     marginLeft: 90,
     paddingHorizontal: 20,
     paddingVertical: 10,
+},
+
+Text:{
+    color: 'white'
+
 }
 })

@@ -13,6 +13,8 @@ export const StackNavigator = () => {
 
     //initialRouteName se utiliza para definir que componente debe mostrar primero la app
     //  initialRouteName="Pagina3Screen"
+
+    //Estilos del header del stack navigator
     screenOptions={{
       headerStyle:{
         elevation: 0,
@@ -23,9 +25,14 @@ export const StackNavigator = () => {
       }
     }}
     >
-      <Stack.Screen name="Principal" options={{title:"Principa"}} component={Principal} />
+
+     {/*  Routas para cada camponente */}
+      <Stack.Screen name="Principal" options={{title:"Principal"}} component={Principal} />
+      
       <Stack.Screen name="ProductosScreen" options={{title:"Productos"}} component={ProductosScreen} />
+      
       <Stack.Screen name="ChatScreen" options={{title:"Chat"}} component={ChatScreen} />
+    
     </Stack.Navigator>
   );
 }

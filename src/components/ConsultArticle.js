@@ -11,34 +11,45 @@ export const ConsultArticle = ({descripcion,img,nombre}) => {
             case 'Buzo':
                 detalle = 'en el';
             break;
+
             case 'Camisa':
                 detalle = 'en la';;
             break;
+
             case 'Pantalon':
                 detalle = 'en el';
             break;
+
             case 'Zapatos':
                 detalle = 'en los';
             break;    
     }
 
     return (
-    <View style={styles.containerArticle}>
-        <View style={styles.header}>
-            <Text style={styles.txtPal}>PAL'</Text>
-            <Text style={styles.txtUso}>USO</Text>
-        </View>
-            <View style={styles.body}>
-                <Text style={styles.txtDescripcion}>{nombreCorto} esta interesado {detalle} {descripcion}</Text>
-                <Image
-                style={styles.imagen}
-                source={{
-                    uri: img
-                  }}
+        <View style={styles.containerArticle}>
+            
+            <View style={styles.header}>
                 
-                />
+                <Text style={styles.txtPal}>PAL'</Text>
+                
+                <Text style={styles.txtUso}>USO</Text>
+            
             </View>
-    </View>
+                
+                <View style={styles.body}>
+                    
+                    <Text style={styles.txtDescripcion}>{nombreCorto} esta interesado {detalle} {descripcion}</Text>
+                    
+                    <Image
+                    style={styles.imagen}
+                    source={{
+                        uri: img
+                    }}
+                    />
+
+                </View>
+                
+        </View>
     )
 }
 
